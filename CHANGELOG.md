@@ -4,6 +4,58 @@
 - Switch to TinyMDE as markdown editor
 - Use checkmark from asset url instead of data:svg to be compatible with CSP rules disallowing images from data attributes
 
+# 2.1.0 (2026-02-16)
+
+- [BREAKING] Upgraded pagy dependency from ~> 8.0 to ~> 43.0
+- Updated controller to use `Pagy::Method` instead of deprecated `Pagy::Backend`
+- Modernized pagy initializer with v43 syntax (extras are now autoloaded)
+- Updated view helpers to use new pagy 43 instance method API:
+  - `pagy.a_lambda()` instead of `pagy_link_proc()`
+  - `@pagy.series_nav(:bootstrap)` instead of `pagy_bootstrap_nav(@pagy)`
+- Added ostruct and benchmark gems for Ruby 4.0 compatibility
+- This resolves dependency conflicts with Rails apps using pagy ~> 43.x
+
+## Migration Guide for 2.1.0
+
+If you are upgrading from Bloak 2.0.x to 2.1.x, please note the pagy API changes:
+
+### Pagy Upgrade (8.x → 43.x)
+
+Bloak now uses pagy 43.x which has a modernized API. If you have custom pagination code:
+
+**View Helper Changes:**
+```ruby
+# Before (pagy 8.x)
+<%== pagy_bootstrap_nav(@pagy) %>
+<% link = pagy_link_proc(pagy, 'class="btn"') %>
+
+# After (pagy 43.x)
+<%== @pagy.series_nav(:bootstrap) %>
+<% link = pagy.a_lambda('class="btn"') %>
+```
+
+**Controller Changes:**
+```ruby
+# Before (pagy 8.x)
+include Pagy::Backend
+
+# After (pagy 43.x)
+include Pagy::Method
+```
+
+**Configuration Changes:**
+```ruby
+# Before (pagy 8.x)
+Pagy::VARS[:items] = 20
+require 'pagy/extras/bootstrap'
+
+# After (pagy 43.x)
+Pagy.options[:items] = 20
+# No require needed - extras are autoloaded!
+```
+
+For more details, see the [Pagy 43 Upgrade Guide](https://ddnexus.github.io/pagy/guides/upgrade-guide/).
+
 # 2.0.0 (2026-02-16)
 
 - [BREAKING] Bloak now requires Rails 8.0 or higher (minimum version: Rails 8.0)
