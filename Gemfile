@@ -7,6 +7,8 @@ gemspec
 group :development do
   gem 'pg'
   gem 'puma'
+  gem 'ostruct'     # Required for Ruby 4.0+
+  gem 'benchmark'   # Required for Ruby 4.0+
 
   gem 'rubocop', '1.19.1'
   gem 'rubocop-performance', '1.11.5'

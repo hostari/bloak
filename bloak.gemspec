@@ -31,6 +31,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency("redcarpet", "~> 3.6")
   spec.add_dependency("rouge", "~> 4.1")
   spec.add_dependency("pg_search", "~> 2.3.5")
-  spec.add_dependency("pagy", "~> 8.0")
+  spec.add_dependency("pagy", "~> 43.0")
   spec.add_dependency("meta-tags", "~> 2.17")
 end

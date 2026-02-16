@@ -7,7 +7,7 @@ PATH
       image_processing (~> 1.2)
       jquery-rails (~> 4.4)
       meta-tags (~> 2.17)
-      pagy (~> 8.0)
+      pagy (~> 43.0)
       pg_search (~> 2.3.5)
       rails (>= 8.0, < 9.0)
       redcarpet (~> 3.6)
@@ -95,6 +95,7 @@ GEM
       uri (>= 0.13.1)
     ast (2.4.3)
     base64 (0.3.0)
+    benchmark (0.5.0)
     bigdecimal (4.0.1)
     bootstrap (5.3.8)
       popper_js (>= 2.11.8, < 3)
@@ -160,7 +161,10 @@ GEM
       racc (~> 1.4)
     nokogiri (1.19.0-x86_64-darwin)
       racc (~> 1.4)
-    pagy (8.6.3)
+    ostruct (0.6.3)
+    pagy (43.2.9)
+      json
+      yaml
     parallel (1.27.0)
     parser (3.3.10.1)
       ast (~> 2.4.1)
@@ -293,6 +297,7 @@ GEM
       base64
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    yaml (0.4.0)
     zeitwerk (2.7.4)
 
 PLATFORMS
@@ -303,7 +308,9 @@ PLATFORMS
   x86_64-darwin-22
 
 DEPENDENCIES
+  benchmark
   bloak!
+  ostruct
   pg
   puma
   rubocop (= 1.19.1)
