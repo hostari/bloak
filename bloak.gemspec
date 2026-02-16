@@ -20,12 +20,12 @@ Gem::Specification.new do |spec|
 
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  spec.add_dependency("rails", ">= 7.0", "< 8.0")
+  spec.add_dependency("rails", ">= 8.0", "< 9.0")
   spec.add_dependency("sprockets-rails", ">= 3.4")
   spec.add_dependency("sass-rails", "~> 6.0")
   spec.add_dependency("bootstrap", "~> 5.2")
   spec.add_dependency("jquery-rails", "~> 4.4")
-  spec.add_dependency("turbolinks", "~> 5.2")
+  spec.add_dependency("turbo-rails", "~> 2.0")
   spec.add_dependency("friendly_id", "~> 5.4")
   spec.add_dependency("image_processing", "~> 1.2")
   spec.add_dependency("redcarpet", "~> 3.6")

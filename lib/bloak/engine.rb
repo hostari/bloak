@@ -1,7 +1,7 @@
 require "friendly_id"
 require 'bootstrap'
 require 'jquery-rails'
-require 'turbolinks'
+require 'turbo-rails'
 require 'pg_search'
 require 'pagy'
 require 'meta-tags'

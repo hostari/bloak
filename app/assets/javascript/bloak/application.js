@@ -1,5 +1,5 @@
 // Manifest
-//= require turbolinks
+//= require @hotwired/turbo-rails
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
